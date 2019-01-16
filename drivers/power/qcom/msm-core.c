@@ -525,7 +525,7 @@ static long msm_core_ioctl(struct file *file, unsigned int cmd,
 					&node->sp->table[i].frequency,
 					sizeof(uint32_t));
 			if (ret)
-				break;
+				goto unlock;
 		}
 unlock:
 		mutex_unlock(&policy_update_mutex);
